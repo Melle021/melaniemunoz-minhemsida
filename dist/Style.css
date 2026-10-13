@@ -379,7 +379,7 @@ section[id] {
 
 .services-image-frame {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   max-width: 480px;
   margin: 0 auto;
   overflow: hidden;
