@@ -173,18 +173,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const caseDetails = {
     case1: {
-      tag: 'PROJEKT 1 • INFLUENCER MARKETING',
-      title: 'Strategiska Influencer-partnerskap & Kampanjer',
+      tag: 'PROJEKT 1 • VIDEOREDIGERING & TIKTOK',
+      title: 'Mina Videor – Klippning, Musik & Berättande',
       content: `
-        <p>I denna fördjupning fokuseras på hur moderna varumärken kan bygga autentiskt förtroende och nå nya målgrupper genom noggrant utvalda ambassadörer och innehållsskapare.</p>
-        <h4>Nyckelinsatser</h4>
+        <p>Jag gillar att redigera videor och ge små ögonblick en egen känsla. På min TikTok delar jag mina videor – ett kreativt sätt att testa idéer och utveckla mitt sätt att berätta med rörlig bild.</p>
+        <h4>Det jag gillar med redigeringen</h4>
         <ul>
-          <li><strong>Målgruppsanalys & Matchning:</strong> Identifiera profiler vars värderingar och engagemang matchar varumärkets kärnbudskap.</li>
-          <li><strong>Koncept & Briefing:</strong> Skapa kreativa ramverk som ger kreatören konstnärlig frihet samtidigt som varumärkets affärsmål uppfylls.</li>
-          <li><strong>Mätning & ROI:</strong> Analys av räckvidd, klickfrekvens, engagemangsgrad och konverteringar.</li>
+          <li><strong>Klippning:</strong> Att välja ut ögonblick och sätta ihop dem i en ordning och ett tempo som gör videon intressant att följa.</li>
+          <li><strong>Musik:</strong> Att hitta ljud och musik som passar känslan och låta klippen samspela med rytmen.</li>
+          <li><strong>Berättande:</strong> Att fånga en stämning eller en liten historia, även i ett kort format.</li>
         </ul>
-        <h4>Verktyg & Metoder</h4>
-        <p>Google Analytics, Meta Business Suite, datadriven räckviddsanalys och kvalitativ tonalitetsgranskning.</p>
+        <h4>Från intresse till digital marknadsföring</h4>
+        <p>Videoredigeringen ger mig utrymme att utveckla min kreativitet och känsla för innehåll. Det vill jag ta med mig till utbildningen på IHM och framtida arbete med sociala medier, där bild, ljud och ett tydligt budskap behöver fungera tillsammans.</p>
+        <p><a href="https://www.tiktok.com/@melaniiemunoz" target="_blank" rel="noopener noreferrer" class="btn-primary">Se mina videor på TikTok ↗</a></p>
       `
     },
     case2: {
