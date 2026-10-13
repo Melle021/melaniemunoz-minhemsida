@@ -27,12 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 2. Citat- och visionskarusell
+  // 2. Citat- och visionskarusell (mjuk övergång utan layout-hopp)
   // -------------------------------------------------------------------------
   const slides = document.querySelectorAll('.quote-slide');
   const dots = document.querySelectorAll('.carousel-dot');
   const prevBtn = document.getElementById('carouselPrev');
   const nextBtn = document.getElementById('carouselNext');
+  const carouselContainer = document.getElementById('quoteCarousel') || document.querySelector('.quote-carousel');
 
   let currentSlide = 0;
   const totalSlides = slides.length;
@@ -47,11 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
     currentSlide = index;
 
     slides.forEach((slide, idx) => {
-      slide.classList.toggle('active', idx === currentSlide);
+      const isActive = idx === currentSlide;
+      slide.classList.toggle('active', isActive);
+      slide.setAttribute('aria-hidden', !isActive);
     });
 
     dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentSlide);
+      const isActive = idx === currentSlide;
+      dot.classList.toggle('active', isActive);
+      dot.setAttribute('aria-current', isActive ? 'true' : 'false');
     });
   }
 
@@ -85,10 +90,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
   dots.forEach(dot => {
     dot.addEventListener('click', (e) => {
-      const targetIdx = parseInt(e.target.getAttribute('data-index'), 10);
+      const targetIdx = parseInt(e.currentTarget.getAttribute('data-index'), 10);
       showSlide(targetIdx);
       startAutoSlide();
     });
+
+    // Tillgänglighet: navigera med Enter/Mellanslag på prickar
+    dot.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        dot.click();
+      }
+    });
+  });
+
+  // Pausa automatisk växling vid hover eller fokus så att texten inte byts mitt i läsningen
+  if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+    carouselContainer.addEventListener('mouseleave', startAutoSlide);
+    carouselContainer.addEventListener('focusin', stopAutoSlide);
+    carouselContainer.addEventListener('focusout', startAutoSlide);
+
+    // Tangentbordsnavigering med piltangenter (Vänster/Höger)
+    carouselContainer.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        showSlide(currentSlide - 1);
+        startAutoSlide();
+      } else if (e.key === 'ArrowRight') {
+        showSlide(currentSlide + 1);
+        startAutoSlide();
+      }
+    });
+
+    // Touch/swipe-stöd på mobila enheter
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carouselContainer.addEventListener('touchstart', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+      stopAutoSlide();
+    }, { passive: true });
+
+    carouselContainer.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 40) {
+          if (diff < 0) {
+            showSlide(currentSlide + 1); // Svep vänster -> nästa
+          } else {
+            showSlide(currentSlide - 1); // Svep höger -> föregående
+          }
+        }
+      }
+      startAutoSlide();
+    }, { passive: true });
+  }
+
+  // Pausa när webbläsarfliken inte är aktiv
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopAutoSlide();
+    } else {
+      startAutoSlide();
+    }
   });
 
   if (totalSlides > 0) {
@@ -252,10 +319,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 6. Aktiv länk i menyn vid scrollning
+  // 6. Aktiv länk i menyn vid scrollning (optimerad med requestAnimationFrame)
   // -------------------------------------------------------------------------
   const sections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', () => {
+  let scrollTicking = false;
+
+  function updateActiveNav() {
     const scrollY = window.pageYOffset;
 
     sections.forEach(current => {
@@ -272,5 +341,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-  });
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(() => {
+        updateActiveNav();
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  }, { passive: true });
 });

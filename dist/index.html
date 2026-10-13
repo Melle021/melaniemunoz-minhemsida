@@ -103,53 +103,57 @@
                     <div class="about-divider"></div>
                 </div>
 
-                <div class="quote-carousel">
+                <div class="quote-carousel" id="quoteCarousel" role="region" aria-roledescription="carousel" aria-label="Citat och personliga visioner">
                     <div class="quote-avatar-wrapper">
                         <div class="quote-avatar">
                             <img src="img/profilbild.jpeg" alt="Melanie Munoz miniatyr" width="80" height="80">
                         </div>
                     </div>
 
-                    <!-- Bildspel 1: Engagemang & Innehåll -->
-                    <div class="quote-slide active" data-slide="0">
-                        <blockquote class="quote-text">
-                            ”Jag valde att studera digital marknadsföring för att kombinera mitt intresse för kreativt
-                            innehåll med strategi och analys. Jag vill förstå vad som får människor att stanna upp,
-                            bli nyfikna och engagera sig – och lära mig att omsätta idéer till kommunikation som når fram.”
-                        </blockquote>
-                        <div class="quote-author">Melanie Munoz</div>
-                        <div class="quote-role">Digital Marketing Specialist • IHM Business School</div>
-                    </div>
+                    <div class="quote-slides-wrapper" id="quoteSlidesWrapper">
+                        <!-- Bildspel 1: Engagemang & Innehåll -->
+                        <div class="quote-slide active" data-slide="0" aria-hidden="false">
+                            <blockquote class="quote-text">
+                                ”Jag valde att studera digital marknadsföring för att kombinera mitt intresse för kreativt
+                                innehåll med strategi och analys. Jag vill förstå vad som får människor att stanna upp,
+                                bli nyfikna och engagera sig – och lära mig att omsätta idéer till kommunikation som når
+                                fram.”
+                            </blockquote>
+                            <div class="quote-author">Melanie Munoz</div>
+                            <div class="quote-role">Digital Marketing Specialist • IHM Business School</div>
+                        </div>
 
-                    <!-- Bildspel 2: AI & Datadriven Kreativitet -->
-                    <div class="quote-slide" data-slide="1">
-                        <blockquote class="quote-text">
-                            ”Jag gillar att redigera videor – att leka med klipp, musik och små detaljer som ger en video
-                            sin egen känsla.”
-                        </blockquote>
-                        <div class="quote-author">Melanie Munoz</div>
-                        <div class="quote-role">Kreativitet & Videoredigering</div>
-                    </div>
+                        <!-- Bildspel 2: AI & Datadriven Kreativitet -->
+                        <div class="quote-slide" data-slide="1" aria-hidden="true">
+                            <blockquote class="quote-text">
+                                ”Jag gillar att redigera videor – att leka med klipp, musik och små detaljer som ger en
+                                video
+                                sin egen känsla.”
+                            </blockquote>
+                            <div class="quote-author">Melanie Munoz</div>
+                            <div class="quote-role">Kreativitet & Videoredigering</div>
+                        </div>
 
-                    <!-- Bildspel 3: Sportmedia -->
-                    <div class="quote-slide" data-slide="2">
-                        <blockquote class="quote-text">
-                            ”Det bästa med sport är spänningen, gemenskapen och att en match kan bjuda på alla känslor
-                            på en gång. Att få kombinera det intresset med kreativt innehåll hade varit riktigt kul!”
-                        </blockquote>
-                        <div class="quote-author">Melanie Munoz</div>
-                        <div class="quote-role">Sport & Gemenskap</div>
+                        <!-- Bildspel 3: Sportmedia -->
+                        <div class="quote-slide" data-slide="2" aria-hidden="true">
+                            <blockquote class="quote-text">
+                                ”Det bästa med sport är spänningen, gemenskapen och att en match kan bjuda på alla känslor
+                                på en gång. Att få kombinera det intresset med kreativt innehåll hade varit riktigt kul!”
+                            </blockquote>
+                            <div class="quote-author">Melanie Munoz</div>
+                            <div class="quote-role">Sport & Gemenskap</div>
+                        </div>
                     </div>
 
                     <!-- Karusellkontroller -->
                     <button class="carousel-nav-btn prev" id="carouselPrev" aria-label="Föregående citat">‹</button>
                     <button class="carousel-nav-btn next" id="carouselNext" aria-label="Nästa citat">›</button>
 
-                    <div class="carousel-dots">
-                        <span class="carousel-dot active" data-index="0" role="button"
+                    <div class="carousel-dots" role="tablist" aria-label="Citatindikatorer">
+                        <span class="carousel-dot active" data-index="0" role="button" tabindex="0"
                             aria-label="Gå till citat 1"></span>
-                        <span class="carousel-dot" data-index="1" role="button" aria-label="Gå till citat 2"></span>
-                        <span class="carousel-dot" data-index="2" role="button" aria-label="Gå till citat 3"></span>
+                        <span class="carousel-dot" data-index="1" role="button" tabindex="0" aria-label="Gå till citat 2"></span>
+                        <span class="carousel-dot" data-index="2" role="button" tabindex="0" aria-label="Gå till citat 3"></span>
                     </div>
                 </div>
             </div>
@@ -170,47 +174,24 @@
 
                     <div class="services-content">
                         <span class="badge-tag" style="color: #8c6c4c;">Kompetens & Expertis</span>
-                        <h2 class="services-title title-serif">Vad Jag Erbjuder</h2>
-                        <p class="services-lead">
-                            Med ett öga för estetik och en stark förståelse för digitala kanaler hjälper jag företag och
-                            organisationer att navigera dagens medielandskap. Här är mina främsta kompetensområden:
-                        </p>
-
+                        <h2 class="services-title title-serif">Erfarenheter Jag Bygger Vidare På</h2>
+                        <p class="services-lead">Genom mina erfarenheter inom försäljning och service har jag lärt mig att förstå människor, kommunicera tydligt och samarbeta. På utbildningen till Digital Marketing Specialist på IHM bygger jag vidare på den grunden med kunskaper inom marknadsföring, content och influencer marketing samt AI och tech.</p>
                         <div class="services-list">
                             <div class="service-item">
                                 <a href="#projekt" class="service-icon" aria-label="Se mina projekt">✦</a>
-                                <div>
-                                    <h4>Sociala Medier & Innehållsproduktion</h4>
-                                    <p>Skapande av engagerande innehåll och koncept som bygger lojala följare och
-                                        stärker varumärkets röst.</p>
-                                </div>
+                                <div><h4>Kundförståelse &amp; Målgrupper</h4><p>På Stålnacke kök, Circle K och Liseberg har jag mött många olika kunder och anpassat mitt bemötande efter deras behov. Det ger mig en praktisk grund för utbildningens arbete med målgrupper och kan hjälpa mig att skapa mer relevant innehåll och bättre digitala kundupplevelser.</p></div>
                             </div>
-
                             <div class="service-item">
                                 <a href="#projekt" class="service-icon" aria-label="Se mina projekt">✦</a>
-                                <div>
-                                    <h4>Influencer Marketing & Samarbeten</h4>
-                                    <p>Matchning, strategiska kampanjbriefs och relationsbyggande som ger trovärdighet
-                                        och bred spridning.</p>
-                                </div>
+                                <div><h4>Försäljning &amp; Kommunikation</h4><p>Som sales agent på NS Visions i Valencia kontaktade jag nya kunder, förhandlade avtal och avslutade affärer. Den erfarenheten kopplar jag till marknadsföringens budskap och kundresa. Framöver kan jag använda den för att formulera erbjudanden som väcker intresse och gör nästa steg tydligt.</p></div>
                             </div>
-
                             <div class="service-item">
                                 <a href="#projekt" class="service-icon" aria-label="Se mina projekt">✦</a>
-                                <div>
-                                    <h4>Sportmedia & Målgruppsengagemang</h4>
-                                    <p>Kampanjer och digitala aktiveringar som fångar idrottsvärldens unika puls och
-                                        gemenskap.</p>
-                                </div>
+                                <div><h4>Presentation &amp; Innehåll</h4><p>Som elevambassadör på Donnergymnasiet presenterade jag information, ledde rundturer och mötte besökare. Det tar jag med mig till content och influencer marketing, där tydlig kommunikation är viktig. Tillsammans med mitt intresse för videoredigering vill jag utveckla innehåll som är lätt att ta till sig och engagerar.</p></div>
                             </div>
-
                             <div class="service-item">
                                 <a href="#projekt" class="service-icon" aria-label="Se mina projekt">✦</a>
-                                <div>
-                                    <h4>AI & Datadrivna Marknadsföringsverktyg</h4>
-                                    <p>Praktisk tillämpning av generativ AI för att effektivisera idéarbete, innehåll
-                                        och kampanjoptimering.</p>
-                                </div>
+                                <div><h4>Samarbete &amp; Struktur</h4><p>Arbetet som servitris och kallskänka på Stålnacke kök har gett mig vana att planera förberedelser, samarbeta och hålla tempo. Det hjälper mig i utbildningens grupparbeten och projekt. I framtiden kan jag använda samma struktur för att samordna innehåll, hålla deadlines och driva kampanjer tillsammans med andra.</p></div>
                             </div>
                         </div>
 
@@ -414,8 +395,8 @@
                         </div>
 
                         <div class="contact-detail-item">
-                            <a href="https://www.google.com/maps/search/?api=1&query=G%C3%B6teborg" class="contact-icon"
-                                aria-label="Visa Göteborg på kartan" title="Visa Göteborg på kartan" target="_blank"
+                            <a href="https://www.google.com/maps/search/?api=1&query=Sverige" class="contact-icon"
+                                aria-label="Visa Sverige på kartan" title="Visa Sverige på kartan" target="_blank"
                                 rel="noopener noreferrer">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -428,7 +409,7 @@
                             </a>
                             <div>
                                 <span class="contact-label">Plats & Status</span>
-                                <span class="contact-value">Göteborg • Öppen för praktik, projekt & nätverkande</span>
+                                <span class="contact-value">Sverige • Öppen för praktik, projekt & nätverkande</span>
                             </div>
                         </div>
                     </div>

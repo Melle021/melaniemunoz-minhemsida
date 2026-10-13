@@ -562,18 +562,38 @@ section[id] {
   object-position: center 15%;
 }
 
+/* Wrapper som staplar alla citat på samma yta för att eliminera höjdhopp & layout shift */
+.quote-slides-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
 .quote-slide {
-  display: none;
-  animation: fadeIn 0.5s ease-in-out forwards;
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              visibility 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
 }
 
 .quote-slide.active {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .quote-text {
@@ -612,10 +632,14 @@ section[id] {
   font-size: 1.8rem;
   line-height: 1;
   padding: 0.5rem;
+  border: none;
+  cursor: pointer;
   transition: var(--transition);
+  z-index: 2;
 }
 
-.carousel-nav-btn:hover {
+.carousel-nav-btn:hover,
+.carousel-nav-btn:focus-visible {
   color: var(--color-sand);
   transform: translateY(-50%) scale(1.15);
 }
@@ -631,8 +655,11 @@ section[id] {
 .carousel-dots {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
   margin-top: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .carousel-dot {
@@ -641,7 +668,14 @@ section[id] {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.25);
   cursor: pointer;
+  border: none;
+  padding: 0;
   transition: var(--transition);
+}
+
+.carousel-dot:hover,
+.carousel-dot:focus-visible {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .carousel-dot.active {
@@ -979,8 +1013,11 @@ a:focus-visible > svg,
 @media (prefers-reduced-motion: reduce) {
   .contact-icon,
   .service-icon,
-  svg:not(.contact-icon svg) {
-    transition: none;
+  svg:not(.contact-icon svg),
+  .quote-slide {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
   }
 }
 
