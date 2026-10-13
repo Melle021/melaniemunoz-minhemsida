@@ -1335,3 +1335,11 @@ textarea.form-control {
     text-align: center;
   }
 }
+
+/* Visa hela förhandsbilden för hemsideprojektet. */
+.case-card[data-case="case2"] .case-image-wrapper {
+  background: #201713;
+}
+.case-card[data-case="case2"] .case-image-wrapper img {
+  object-fit: contain;
+}
