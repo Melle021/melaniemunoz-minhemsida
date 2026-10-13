@@ -414,8 +414,8 @@
                         </div>
 
                         <div class="contact-detail-item">
-                            <a href="https://www.google.com/maps/search/?api=1&query=Sverige" class="contact-icon"
-                                aria-label="Visa Sverige på kartan" title="Visa Sverige på kartan" target="_blank"
+                            <a href="https://www.google.com/maps/search/?api=1&query=G%C3%B6teborg" class="contact-icon"
+                                aria-label="Visa Göteborg på kartan" title="Visa Göteborg på kartan" target="_blank"
                                 rel="noopener noreferrer">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -428,7 +428,7 @@
                             </a>
                             <div>
                                 <span class="contact-label">Plats & Status</span>
-                                <span class="contact-value">Sverige • Öppen för praktik, projekt & nätverkande</span>
+                                <span class="contact-value">Göteborg • Öppen för praktik, projekt & nätverkande</span>
                             </div>
                         </div>
                     </div>
@@ -446,36 +446,43 @@
 
                 <div class="contact-form-card">
                     <form id="contactForm" novalidate>
+                        <!-- Honeypot fält för spamskydd -->
+                        <input type="text" name="_honey" id="formHoney" style="display:none" tabindex="-1" autocomplete="off">
+
                         <div class="form-group">
                             <label for="contactName" class="form-label">Ditt Namn</label>
-                            <input type="text" id="contactName" class="form-control" placeholder="Anna Andersson"
+                            <input type="text" id="contactName" name="name" class="form-control" placeholder="Anna Andersson"
                                 required>
                         </div>
 
                         <div class="form-group">
                             <label for="contactEmail" class="form-label">E-postadress</label>
-                            <input type="email" id="contactEmail" class="form-control" placeholder="namn@foretag.se"
+                            <input type="email" id="contactEmail" name="email" class="form-control" placeholder="namn@foretag.se"
                                 required>
                         </div>
 
                         <div class="form-group">
                             <label for="contactSubject" class="form-label">Ämne</label>
-                            <input type="text" id="contactSubject" class="form-control"
+                            <input type="text" id="contactSubject" name="subject" class="form-control"
                                 placeholder="Projektförfrågan / Praktik / Samarbete">
                         </div>
 
                         <div class="form-group">
                             <label for="contactMessage" class="form-label">Meddelande</label>
-                            <textarea id="contactMessage" class="form-control"
+                            <textarea id="contactMessage" name="message" class="form-control"
                                 placeholder="Berätta kort om vad du vill diskutera..." required></textarea>
                         </div>
 
-                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                        <button type="submit" id="contactSubmitBtn" class="btn-primary" style="width: 100%; justify-content: center;">
                             Skicka Meddelande
                         </button>
 
-                        <div class="form-success-message" id="formSuccessMessage">
+                        <div class="form-success-message" id="formSuccessMessage" role="status" aria-live="polite">
                             Tack för ditt meddelande! Jag återkommer så snart som möjligt.
+                        </div>
+
+                        <div class="form-error-message" id="formErrorMessage" role="alert" aria-live="polite">
+                            Något gick fel när meddelandet skulle skickas. Vänligen försök igen eller mejla direkt till <a href="mailto:melanie.munoz0207@gmail.com">melanie.munoz0207@gmail.com</a>.
                         </div>
                     </form>
                 </div>

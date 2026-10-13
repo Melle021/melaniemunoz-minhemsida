@@ -1056,6 +1056,42 @@ textarea.form-control {
   font-size: 0.85rem;
   text-align: center;
   border-radius: 2px;
+  line-height: 1.5;
+}
+
+.form-error-message {
+  display: none;
+  background: rgba(220, 80, 80, 0.15);
+  border: 1px solid rgba(220, 80, 80, 0.4);
+  color: #fca5a5;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  text-align: center;
+  border-radius: 2px;
+  line-height: 1.5;
+}
+
+.form-error-message a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Site Footer */

@@ -201,40 +201,113 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -------------------------------------------------------------------------
-  // 4. Kontaktformulärshantering
+  // 4. Kontaktformulärshantering (Skickas till melanie.munoz0207@gmail.com)
   // -------------------------------------------------------------------------
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccessMessage');
+  const formError = document.getElementById('formErrorMessage');
+  const submitBtn = document.getElementById('contactSubmitBtn') || (contactForm ? contactForm.querySelector('button[type="submit"]') : null);
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+  if (contactForm && submitBtn) {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      const nameInput = document.getElementById('contactName');
-      const emailInput = document.getElementById('contactEmail');
-      const messageInput = document.getElementById('contactMessage');
 
-      if (!nameInput.value || !emailInput.value || !messageInput.value) {
-        alert('Vänligen fyll i namn, e-postadress och ditt meddelande.');
+      // Dölj tidigare meddelanden
+      if (formSuccess) formSuccess.style.display = 'none';
+      if (formError) formError.style.display = 'none';
+
+      // Honeypot för spamskydd (om en bot fyller i det dolda fältet)
+      const honeyInput = document.getElementById('formHoney');
+      if (honeyInput && honeyInput.value) {
+        contactForm.reset();
         return;
       }
 
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const nameInput = document.getElementById('contactName');
+      const emailInput = document.getElementById('contactEmail');
+      const subjectInput = document.getElementById('contactSubject');
+      const messageInput = document.getElementById('contactMessage');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const subject = subjectInput ? subjectInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      // Validera obligatoriska fält
+      if (!name || !email || !message) {
+        if (formError) {
+          formError.textContent = 'Vänligen fyll i ditt namn, din e-postadress och ditt meddelande.';
+          formError.style.display = 'block';
+        }
+        if (!name && nameInput) nameInput.focus();
+        else if (!email && emailInput) emailInput.focus();
+        else if (!message && messageInput) messageInput.focus();
+        return;
+      }
+
+      // Validera e-postformat
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        if (formError) {
+          formError.textContent = 'Vänligen ange en giltig e-postadress (t.ex. namn@foretag.se).';
+          formError.style.display = 'block';
+        }
+        if (emailInput) emailInput.focus();
+        return;
+      }
+
+      // Sätt laddningsläge på knappen
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Skickar...';
+      submitBtn.innerHTML = `
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 0.8s linear infinite;">
+          <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+          <path d="M12 2a10 10 0 0 1 10 10"></path>
+        </svg>
+        Skickar...
+      `;
       submitBtn.disabled = true;
 
-      setTimeout(() => {
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/melanie.munoz0207@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: subject ? `[Portfolio] ${subject}` : `Nytt meddelande från ${name} (Portfolio)`,
+            _replyto: email,
+            _template: 'table',
+            _captcha: 'false',
+            message: message
+          })
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok && (data.success === 'true' || data.success === true || !data.error)) {
+          contactForm.reset();
+          if (formSuccess) {
+            formSuccess.style.display = 'block';
+            setTimeout(() => {
+              formSuccess.style.display = 'none';
+            }, 8000);
+          }
+        } else {
+          throw new Error((data && data.message) || 'Kunde inte skicka meddelandet.');
+        }
+      } catch (err) {
+        console.error('Fel vid formulärinskickning:', err);
+        if (formError) {
+          formError.innerHTML = 'Något gick fel när meddelandet skulle skickas. Vänligen försök igen eller mejla direkt till <a href="mailto:melanie.munoz0207@gmail.com" style="color: inherit; text-decoration: underline;">melanie.munoz0207@gmail.com</a>.';
+          formError.style.display = 'block';
+        }
+      } finally {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        contactForm.reset();
-        if (formSuccess) {
-          formSuccess.style.display = 'block';
-          setTimeout(() => {
-            formSuccess.style.display = 'none';
-          }, 6000);
-        }
-      }, 700);
+      }
     });
   }
 
