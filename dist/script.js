@@ -188,18 +188,20 @@ document.addEventListener('DOMContentLoaded', () => {
       `
     },
     case2: {
-      tag: 'PROJEKT 2 • AI & TECH I MARKNADSFÖRING',
-      title: 'AI-Drivna Strategier & Digital Automation',
+      tag: 'PROJEKT 2 • MIN PERSONLIGA HEMSIDA',
+      title: 'Min Portfolio – Från Första Intryck Till Kontakt',
       content: `
-        <p>Undersökning och tillämpning av AI-teknologi och smarta automatiseringsflöden inom digital marknadsföring och kundresor.</p>
-        <h4>Nyckelinsatser</h4>
-        <ul>
-          <li><strong>Prediktiv Analys & Segmentering:</strong> Använda AI-verktyg för att förstå kundbeteenden och förutse konsumtionstrender.</li>
-          <li><strong>Skalbart Innehållsskapande:</strong> Effektivisera produktionen av copy, visuellt material och kampanjvarianter med bibehållen hög kvalitet.</li>
-          <li><strong>Arbetsflöden & Automation:</strong> Automatisering av digitala nyhetsbrev och leadsgenerering.</li>
-        </ul>
-        <h4>Verktyg & Metoder</h4>
-        <p>Generativa AI-modeller, prompt engineering, automatiserade marknadsföringsflöden och datavisualisering.</p>
+        <p>Min hemsida samlar vem jag är, vad jag studerar och vilka erfarenheter jag tar med mig in i digital marknadsföring. Målet är att ge potentiella praktikgivare, arbetsgivare och samarbetspartner en tydlig bild av mig och en enkel väg till kontakt.</p>
+        <h4>Design – personlig och enhetlig</h4>
+        <p>Jag valde varma beige- och espressotoner för ett lugnt och välkomnande intryck. Dekorativa rubriker kombineras med en enkel brödtext för att balansera personlighet och läsbarhet. Bilder på mig gör presentationen mer personlig, medan luft mellan avsnitten hjälper innehållet att komma fram.</p>
+        <h4>Struktur – lätt att hitta rätt</h4>
+        <p>Sidan börjar med en kort presentation och knappar till projekt och kontakt. Därefter följer information om mig, mina erfarenheter och min utbildning, följt av projekt och kontaktuppgifter. Menyn gör det enkelt att gå direkt till ett avsnitt, och layouten anpassas till både mobil och dator.</p>
+        <h4>Innehåll – en bild av mig och min utveckling</h4>
+        <p>Jag lyfter utbildningen till Digital Marketing Specialist på IHM och visar hur min bakgrund inom försäljning och service kan bli en styrka i framtida marknadsföringsarbete. Korta personliga texter om sport och videoredigering ger också en bild av mina intressen. Projekten samlar exempel på det jag vill visa och utveckla.</p>
+        <h4>Kontakt – från intresse till samtal</h4>
+        <p>En tydlig kontaktknapp i menyn och en knapp i introduktionen leder till kontaktavsnittet. Där går det att klicka på telefonnumret för att ringa, mejladressen för att skriva ett mejl och LinkedIn-loggan för att besöka min profil. Kontaktikonerna ger visuell respons när man pekar på dem, och större tryckytor gör dem enklare att använda på mobilen.</p>
+        <h4>Vad jag tar med mig</h4>
+        <p>Arbetet med hemsidan har gett mig möjlighet att koppla ihop målgrupp, budskap och visuell presentation. Jag tar med mig hur tydliga prioriteringar och enkla kontaktvägar kan göra en portfolio mer användbar – kunskaper jag vill utveckla vidare inom digital marknadsföring.</p>
       `
     },
     case3: {
