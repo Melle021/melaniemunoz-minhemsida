@@ -378,6 +378,7 @@ section[id] {
 }
 
 .services-image-frame {
+  border-radius: 16px;
   width: 100%;
   aspect-ratio: 3 / 4;
   max-width: 480px;
@@ -389,6 +390,7 @@ section[id] {
 }
 
 .services-image-frame img {
+  filter: sepia(0.08) saturate(0.92);
   width: 100%;
   height: 100%;
   object-fit: cover;
