@@ -206,18 +206,23 @@ document.addEventListener('DOMContentLoaded', () => {
       `
     },
     case3: {
-      tag: 'PROJEKT 3 • SPORTMEDIA & KAMPANJER',
-      title: 'Sportmedia, Storytelling & Målgruppsaktivering',
+      tag: 'PROJEKT 3 • FRAMTIDA PROJEKT INOM SPORTMEDIA',
+      title: 'Drömprojekt – Bakom Kulisserna i Sportens Värld',
       content: `
-        <p>Kombinationen av sportvärldens passion och puls med avancerad digital marknadsföringsstrategi för att bygga långsiktig publiklojalitet.</p>
-        <h4>Nyckelinsatser</h4>
+        <p>Mitt drömprojekt är att följa ett lag under en säsong och skapa en videoserie som visar mer än bara resultaten. Jag vill fånga nervositeten före match, skratten på träningen och människorna bakom tröjnumren. Det här är en framtida idé som jag vill förverkliga när jag arbetar inom sport och media.</p>
+        <h4>Idén – närmare laget</h4>
+        <p>Serien skulle bestå av korta videor för TikTok och Instagram, där fansen får följa med bakom kulisserna. Målet är att skapa en personlig och rolig inblick i lagets vardag som både engagerade supportrar och nya följare kan uppskatta.</p>
         <ul>
-          <li><strong>Kanalöverskridande Storytelling:</strong> Skapa innehåll i realtid som fångar ögonblicken och engagerar fans före, under och efter matcher.</li>
-          <li><strong>Digitala Samarbetsaktiveringar:</strong> Skapa mervärde för sponsorer och partners genom kreativa sociala medie-format.</li>
-          <li><strong>Community-byggande:</strong> Interaktiva format som omröstningar, backstage-innehåll och exklusiva digitala upplevelser.</li>
+          <li><strong>En dag med en spelare:</strong> Korta intervjuer, rutiner och personliga frågor som låter publiken lära känna personen bakom sporten.</li>
+          <li><strong>Matchdagen:</strong> Förberedelser, stämningen på arenan och reaktionerna efter slutsignalen.</li>
+          <li><strong>Fansens frågor:</strong> Följarnas frågor och önskemål får vara med och forma kommande avsnitt.</li>
         </ul>
-        <h4>Verktyg & Metoder</h4>
-        <p>Sociala medier-strategi (TikTok, Instagram, LinkedIn), videokoncept, live-bevakning och målgruppsdialog.</p>
+        <h4>Min roll</h4>
+        <p>Jag skulle vilja vara med från idé och planering till filmning, redigering och publicering. Här får jag kombinera mitt sportintresse med det jag gillar med video: klippning, musik och att hitta de små ögonblick som gör en berättelse levande.</p>
+        <h4>Så vill jag ta mig dit</h4>
+        <p>Ett första steg skulle kunna vara att kontakta en lokal förening och föreslå en liten pilotserie, i samarbete med laget och med tillstånd att filma och publicera. Kunskaperna från IHM kan hjälpa mig att välja målgrupp, planera innehåll och följa upp tittartid, kommentarer och delningar för att utveckla nästa video.</p>
+        <h4>Vad jag vill uppnå</h4>
+        <p>Jag vill skapa innehåll som får människor att känna sig närmare laget och vilja följa med till nästa match. Samtidigt skulle projektet ge mig praktisk erfarenhet av innehållsproduktion och ett konkret steg mot att arbeta med sportmedia.</p>
       `
     }
   };
