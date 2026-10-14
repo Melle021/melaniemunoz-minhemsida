@@ -1345,3 +1345,8 @@ textarea.form-control {
 .case-card[data-case="case2"] .case-image-wrapper img {
   object-fit: contain;
 }
+
+/* Diskret mörkare toner för projekt 1. */
+.case-card[data-case="case1"] .case-image-wrapper img {
+  filter: brightness(0.86);
+}
