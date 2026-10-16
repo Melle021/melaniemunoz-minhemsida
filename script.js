@@ -276,44 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -------------------------------------------------------------------------
-  // 4. Kontaktformulärshantering
-  // -------------------------------------------------------------------------
-  const contactForm = document.getElementById('contactForm');
-  const formSuccess = document.getElementById('formSuccessMessage');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const nameInput = document.getElementById('contactName');
-      const emailInput = document.getElementById('contactEmail');
-      const messageInput = document.getElementById('contactMessage');
-
-      if (!nameInput.value || !emailInput.value || !messageInput.value) {
-        alert('Vänligen fyll i namn, e-postadress och ditt meddelande.');
-        return;
-      }
-
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Skickar...';
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        contactForm.reset();
-        if (formSuccess) {
-          formSuccess.style.display = 'block';
-          setTimeout(() => {
-            formSuccess.style.display = 'none';
-          }, 6000);
-        }
-      }, 700);
-    });
-  }
-
-  // -------------------------------------------------------------------------
   // 5. Till toppen-knapp
   // -------------------------------------------------------------------------
   const backToTopBtn = document.getElementById('backToTop');
