@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h4>Innehåll – en bild av mig och min utveckling</h4>
         <p>Jag lyfter utbildningen till Digital Marketing Specialist på IHM och visar hur min bakgrund inom försäljning och service kan bli en styrka i framtida marknadsföringsarbete. Korta personliga texter om sport och videoredigering ger också en bild av mina intressen. Projekten samlar exempel på det jag vill visa och utveckla.</p>
         <h4>Kontakt – från intresse till samtal</h4>
-        <p>En tydlig kontaktknapp i menyn och en knapp i introduktionen leder till kontaktavsnittet. Där går det att klicka på telefonnumret för att ringa, mejladressen för att skriva ett mejl och LinkedIn-loggan för att besöka min profil. Kontaktikonerna ger visuell respons när man pekar på dem, och större tryckytor gör dem enklare att använda på mobilen.</p>
+        <p>En tydlig kontaktknapp i menyn och en knapp i introduktionen leder till kontaktavsnittet. Där går det att klicka på mejladressen för att skriva ett mejl och LinkedIn-loggan för att besöka min profil. Kontaktikonerna ger visuell respons när man pekar på dem, och större tryckytor gör dem enklare att använda på mobilen.</p>
         <h4>Vad jag tar med mig</h4>
         <p>Arbetet med hemsidan har gett mig möjlighet att koppla ihop målgrupp, budskap och visuell presentation. Jag tar med mig hur tydliga prioriteringar och enkla kontaktvägar kan göra en portfolio mer användbar – kunskaper jag vill utveckla vidare inom digital marknadsföring.</p>
       `
